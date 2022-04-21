@@ -2,9 +2,9 @@
 
 ***Việc hiểu được hệ thống đang hoạt động tốt là sự chuẩn bị tuyệt với cho việc đối mặt với các vấn đề không thể tránh khỏi của hệ thống.***
 
-Đã từng có câu nói đùa lâu đời trong làng phần mềm mã nguồn mở là: "the code is sel-documenting" (Code là tự ghi chép). Kinh nghiệm cho thấy rằng việc đọc source cũng giống nghe bản tin dự báo thời tiết: những người khôn ngoan vẫn ra ngoài và kiểm tra bầu trời.  Dưới đây là một số mèo để kiểm tra và quan sát các hệ thống linux trong quá trình khởi động (boot) bằng cách tận dụng hiểu biết về các công cụ debugging quen thuộc. Phân tích quá trình khởi động của hệ thống có đang hoạt động tốt sẽ chuẩn bị cho người dùng và các nhà phát triển đối phó được với những vấn đề lỗi không thể tránh khỏi.
+Có một câu đùa: "the code is sel-documenting" (Code là tự ghi chép). Trên thực tế việc đọc source cũng giống nghe bản tin dự báo thời tiết: người khôn ngoan vẫn ra ngoài và kiểm tra bầu trời.  Dưới đây là một số mẹo để kiểm tra và quan sát các hệ thống linux trong quá trình khởi động (boot) sử dụng các công cụ debugging quen thuộc. Quan sát và kiểm tra quá trình khởi động của hệ thống có đang hoạt động tốt giúp người dùng và các nhà phát triển có thể đưa ra giải pháp đối phó được với những vấn đề  về kernel không thể tránh khỏi.
 
-Hiểu theo một số cách, thì quá trình khởi động khá là đơn giản đến kinh ngạc. Hạt nhân (kernel) khởi động đơn luồng và đồng bộ một lõi đơn và có vẻ như dễ ... Nhưng làm thế nào tự kernel có thể khởi động? Chức năng của `initrd` ([initial ramsidk](https://en.wikipedia.org/wiki/Initial_ramdisk)) và bootloader là gì? Và tại sao đèn LED trên port Ethernet luôn luôn sáng?
+Dưới một số cách nhìn thì quá trình khởi động đơn giản đến kinh ngạc. Hạt nhân (kernel) khởi động đơn luồng và đồng bộ một lõi đơn một cách dễ dàng ... Nhưng làm thế nào tự kernel có thể khởi động? Chức năng của `initrd` ([initial ramsidk](https://en.wikipedia.org/wiki/Initial_ramdisk)) và bootloader là gì? Và tại sao đèn LED trên port Ethernet luôn luôn sáng?
 
 Đọc tiếp để tìm câu trả lời cho những câu hỏi này và các câu hỏi khác, code miêu tả cho các bài demo và bài tập thì cũng có sẵn trên Github. ([tại đây](https://github.com/chaiken/LCA2018-Demo-Code))
 
